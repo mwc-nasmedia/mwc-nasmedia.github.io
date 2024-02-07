@@ -1,0 +1,170 @@
+/* SUIT */
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 100;
+	src: url('/css/font/SUIT-Thin.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 200;
+	src: url('/css/font/SUIT-ExtraLight.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 300;
+	src: url('/css/font/SUIT-Light.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 400;
+	src: url('/css/font/SUIT-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 500;
+	src: url('/css/font/SUIT-Medium.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 600;
+	src: url('/css/font/SUIT-SemiBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 700;
+	src: url('/css/font/SUIT-Bold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 800;
+	src: url('/css/font/SUIT-ExtraBold.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 900;
+	src: url('/css/font/SUIT-Heavy.woff2') format('woff2');
+}
+
+
+/* NotoSansKR */
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 100;
+	src: url('/css/font/NotoSansKR-Thin.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 200;
+	src: url('/css/font/NotoSansKR-ExtraLight.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 300;
+	src: url('/css/font/NotoSansKR-Light.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 400;
+	src: url('/css/font/NotoSansKR-Regular.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 500;
+	src: url('/css/font/NotoSansKR-Medium.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 600;
+	src: url('/css/font/NotoSansKR-SemiBold.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 700;
+	src: url('/css/font/NotoSansKR-Bold.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 800;
+	src: url('/css/font/NotoSansKR-ExtraBold.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Sans KR';
+	font-weight: 900;
+	src: url('/css/font/NotoSansKR-Black.ttf') format('ttf');
+}
+
+
+/* Roboto */
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 100;
+	src: url('/css/font/Roboto-Thin.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 300;
+	src: url('/css/font/Roboto-Light.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 400;
+	src: url('/css/font/Roboto-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 500;
+	src: url('/css/font/Roboto-Medium.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 700;
+	src: url('/css/font/Roboto-Bold.woff2') format('woff2');
+}
+
+
+/* Pretendard */
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	src: url('/css/font/Pretendard-Thin.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	src: url('/css/font/Pretendard-ExtraLight.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	src: url('/css/font/Pretendard-Light.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	src: url('/css/font/Pretendard-Regular.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	src: url('/css/font/Pretendard-Medium.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	src: url('/css/font/Pretendard-SemiBold.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	src: url('/css/font/Pretendard-Bold.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	src: url('/css/font/Pretendard-ExtraBold.ttf') format('ttf');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	src: url('/css/font/Pretendard-Black.ttf') format('ttf');
+}

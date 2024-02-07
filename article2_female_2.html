@@ -1,0 +1,614 @@
+<!-- 페이지별 암호화(?) 안내
+main_jinmi = 시연 메인 페이지
+gender(0,1,2)+textcontext(0,1,2) = 적용 페이지
+ : gender inactive + text inactive = 00
+ : gender female + text inactive = 10
+ : gender male + text inactive = 20
+ : gender inactive + text Category = 01
+ : gender inactive + text midm = 02
+ : gender female + text Category = 11
+ : gender female + text midm = 12
+ : gender male + text Category = 21
+ : gender male + text midm = 22 -->
+
+
+<!DOCTYPE html>
+
+<script>
+    // 3초 뒤에 이미지 변경 함수 호출
+    setTimeout(changeImage, 2000);
+
+    // 이미지 변경 함수
+    function changeImage() {
+        // 이미지 엘리먼트 가져오기
+        const imageElement = document.querySelector('.card-header img');
+
+        // 새로운 이미지로 변경
+        if (imageElement) {
+            imageElement.src = 'assets/images/article2_female_2.png';
+        }
+    }
+</script>
+
+
+<html data-layout="vertical"
+      data-topbar="light"
+      data-sidebar="light" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<head>
+    <!--   META	 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Imagetoolbar" content="no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/logo-sm.png" sizes="16x16" type="image/png">
+    
+    <title>Contextual Targeting with AI</title>
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- plugin Css -->
+    <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/multiple-select-1.6.0.css" rel="stylesheet" type="text/css"/>
+    <link href="css/daterangepicker.css" rel="stylesheet" type="text/css"/>
+    <link href="css/toastr.css" rel="stylesheet" type="text/css"/>
+    <link href="css/spinkit.css"  rel="stylesheet" type="text/css"/>
+    <link href="css/select2.min.css"  rel="stylesheet" type="text/css"/>
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css"  rel="stylesheet" type="text/css"/>
+
+
+    <link rel="stylesheet" href="css/app-font.css"  type="text/css"/>
+    <link rel="stylesheet" href="css/app-common.css?v=20240124" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>
+
+</head>
+<body>
+<!-- Begin page -->
+<div id="layout-wrapper">
+    <!-- Tool Bar -->
+    <header id="page-topbar">
+        <div class="layout-width">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box horizontal-logo">
+                        <a href="#" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                            <span class="logo-lg">
+                            <img src="assets/images/nasmedia-white.svg" alt="" height="17">
+                        </span>
+                        </a>
+                        <a href="/" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                            <span class="logo-lg">
+                            <img src="assets/images/nasmedia-white.svg" alt="" height="17">
+                        </span>
+                        </a>
+                    </div>
+                    <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                        <span class="hamburger-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                    <div class="d-none d-md-block">
+                        <h3 class="mb-sm-0" style="text-transform:unset; position: absolute; top: 24%;">
+                            <span class="align-middle"><em class="icon-book-open"></em>Contextual Targeting with AI</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown topbar-head-dropdown ms-1 header-item">
+                        <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bx-category-alt fs-22'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Left Sidebar Start -->
+    <!-- 배경 색상 변경: assets/css/app.min.css에서 root의 --vz-vertical-menu-bg 색상 변경 .navbar-menu에서 오른쪽 보더 및 색상 지정 -->
+        <div class="app-menu navbar-menu">
+        <!-- LOGO -->
+        <div class="navbar-brand-box">
+            <!-- Dark Logo-->
+            <a href="main.html" class="logo logo-dark">
+                <span class="logo-sm">
+                    <img src="assets/images/logo-sm.png" alt="" height="15">
+                </span>
+                <span class="logo-lg">
+                    <img src="assets/images/nasmedia-white.svg" alt="" height="22">
+                </span>
+            </a>
+            <!-- Light Logo-->
+            <a href="main.html" class="logo logo-light">
+                <span class="logo-sm">
+                    <img src="assets/images/logo-sm.png" alt="" height="15">
+                </span>
+                <span class="logo-lg">
+                    <img src="assets/images/nasmedia-white.svg" alt="" height="17">
+                </span>
+            </a>
+            <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                <i class="ri-record-circle-line"></i>
+            </button>
+        </div>
+
+        <div id="scrollbar">
+            <div class="container-fluid">
+                <div id="two-column-menu" style="display: block;">
+                </div>
+                <ul class="navbar-nav" id="navbar-nav">
+                    <li>
+                        <div class="card card-dark">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        
+                        <a class="nav-link menu-link active" href="#leftmenu-3" role="button" aria-expanded="true" aria-controls="캠페인">
+                            <i class="ri-menu-4-line"></i>
+                            <span data-key="t-캠페인" style="font-size: 22px;">Article</span>
+                        </a>
+                        <div class="collapse menu-dropdown show" id="leftmenu-3">
+                            <ul class="nav nav-sm flex-column">
+                                <li class="nav-item">
+                                    <a href="audience_article_01.html" class="nav-link" data-key="t-analytics" style="font-size: 18px;">Article 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link active" data-key="t-analytics" style="font-size: 18px;">Article 2</a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <br/>
+                <br/>
+
+
+                <li class="menu-title"><span data-key="t-menu" style="font-size: 15px;">Audience</span></li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link active" href="#" role="button" aria-expanded="false" aria-controls="leftmenu-2"> 
+                        <!--nav-link menu-link active이면 주황색 글씨 / nav-link menu-link이면 회색 글씨 오버 시 주황색-->
+                        <i class="ri-heart-line"></i>
+                        <span data-key="t-파트너" style="font-size: 22px;">Gender</span>
+                    </a>
+                    <div class="menu-dropdown" id="leftmenu-2"> <!-- collapse 클래스 제거 -->
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <input type="radio" id="femaleGender" name="gender" value="Female" checked>
+                                <label for="femaleGender" style="font-size: 18px;">&nbsp;Female</label>
+                            </li>
+                            <li class="nav-item">
+                                <input type="radio" id="maleGender" name="gender" value="Male">
+                                <label for="maleGender" style="font-size: 18px;">&nbsp;Male</label>
+                              </li>
+                        </ul>
+                    </div>
+                
+                
+
+            </li>
+          </li>
+
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <li class="nav-item text-center" >
+                        <br>
+                        <div class="menu-dropdown show" id="leftmenu-3">
+                            <ul class="nav nav-sm flex-column" style="padding-left: 0px;">
+                                <li class="nav-item"><br>
+                                    <a id="search" class="btn btn-primary me-2" style="font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A &nbsp;&nbsp;&nbsp;P &nbsp;&nbsp;&nbsp;P &nbsp;&nbsp;&nbsp;L &nbsp;&nbsp;&nbsp;Y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                    <p></p>
+                                    <a id="clear" class="btn btn-primary me-2" style="font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C &nbsp;&nbsp;&nbsp;L &nbsp;&nbsp;&nbsp;E &nbsp;&nbsp;&nbsp;A &nbsp;&nbsp;&nbsp;R &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Sidebar -->
+        </div>
+
+        <div class="sidebar-background"></div>
+    </div>
+
+    <!-- Left Sidebar End -->
+    <!-- Vertical Overlay-->
+    <div class="vertical-overlay"></div>
+
+    
+    <!-- ============================================================== -->
+    <!-- Content 스타일 -->
+    <!-- ============================================================== -->
+
+    <style>
+        .card {
+            width: 100%;
+        }
+    
+        .card-header {
+            height: 87vh; /* 화면 높이의 80%로 설정합니다. */
+            overflow: hidden; /* 카드 영역을 벗어나는 내용을 감춥니다. */
+        }
+    
+        .row img {
+            max-width: 100%; /* 이미지의 최대 너비를 100%로 설정하여 부모 요소에 맞춥니다. */
+            max-height: 100%; /* 이미지의 최대 높이를 100%로 설정하여 부모 요소에 맞춥니다. */
+            width: auto; /* 가로 크기를 자동으로 조절합니다. */
+            height: auto; /* 세로 크기를 자동으로 조절합니다. */
+            margin: auto; /* 가운데 정렬합니다. */
+            display: block; /* 블록 레벨 요소로 설정합니다. */
+        }
+    </style>
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+
+    <div class="main-content">
+        <div class="page-content" style="padding-bottom: 0px;">
+            <div class="container-fluid">
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                    </div>
+                </div>
+                <!-- end page title -->
+    
+                <!--begin::Content container-->
+                <div class="row">
+                    <div class="col-md-6" > <!--7로 바꾸고 밑을 5로 바꾸면 6:4 비율(진미)-->
+                        <div class="card">
+                            <form id="frm" name="frm" method="post" onsubmit="return false">
+                                <!-- 컨텐츠 카드 헤더 시작 -->
+                                <div class="card-header border-bottom" >
+                                    <div class="row g-2" style="padding-top: 35px;">
+                                        <!-- 나란히 배치할 이미지 -->
+                                        <div class="col-md-12" >
+                                            <img src="assets/images/article2_load.gif" alt="jinmi" style="height: 85%; max-height:100%" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <form id="frm" name="frm" method="post" onsubmit="return false">
+                                <!-- 컨텐츠 카드 헤더 시작 -->
+                                <div class="card-header border-bottom">
+                                    <div class="row g-2" style="padding-top: 55px;">
+                                        <!-- 나란히 배치할 이미지 -->
+                                        <div class="col-md-12" >
+                                            <img src="assets/images/female_right.png" alt="jinmi" style="height: 85%;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end::Content container -->
+            </div>
+            <!-- container-fluid -->
+        </div>
+    </div>
+
+    
+        
+        <!-- End Page-content
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end d-none d-sm-block">
+                            <script>document.write(new Date().getFullYear())</script>© Copyright ⓒ klm960@nasmedia.co.kr All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer> -->
+    </div>
+    <!-- end main content-->
+</div>
+<!--start back-to-top-->
+<button onclick="topFunction()" class="btn btn-primary btn-icon" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+</button>
+<!--end back-to-top-->
+
+<!-- END layout-wrapper -->
+
+<style>
+    /* 라디오 버튼 글자 색상 설정 */
+    .nav-item input[type="radio"] + label {
+        color: white;
+    }
+
+</style>
+
+
+<!--begin::Javascript-->
+
+    
+    <script>
+		const INIT_PAGE_NUMBER = 1;
+		const USER_MENU_ROLE   = 3 == null ? "" : 3;
+
+		// Response code
+		const SUCCESS_CODE                = 200;
+		const GLOBAL_EXCEPTION_ERROR_CODE = 999;
+		const SESSION_EXPIRED_ERROR_CODE  = 990;
+    </script>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/app.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/block-ui.js"></script>
+    <script type="text/javascript" src="js/toastr.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="assets/libs/moment/moment.js"></script>
+    <script type="text/javascript" src="js/multiple-select-1.6.0.js"></script>
+    <script type="text/javascript" src="js/custom-cleave.js"></script>
+    <script type="text/javascript" src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <script type="text/javascript" src="js/clipboard.js"></script>
+    <script type="text/javascript" src="js/app-common.js?v=202401"></script>
+    <script type="text/javascript" src="js/app-component.js?v=202401"></script>
+    <script type="text/javascript" src="js/app-common-kang.js?v=202401"></script>
+    <!--end::Global Javascript Bundle-->
+
+<!--end::Javascript-->
+<!--begin::Custom Javascript(used for this page only)-->
+
+    <script>
+        const _Self = {
+			init : function () {
+
+				//this.getList();
+
+				$("#search_keyword").keyup(function() {
+
+					if (event.keyCode == 13) {
+						_Self.getList();
+					}
+				});
+
+				$("#initRefresh").on("click", function() {
+					location.href="/camp/campaign-mng";
+				});
+
+				$(document).on("change", "select[name=recordSize]", function() {
+					_Self.getList();
+                })
+                
+				// select box change
+				// $("select").on("change", function(e) {
+				// 	_Self.getList();
+				// });
+
+				$("#search").on("click", function() {
+					_Self.getList();
+				});
+
+				$(document).on("click", "#camp_list_wrap .checkbox_camp_use_yn", async function(e) {
+					e.preventDefault();
+					const campId = $(this).attr('camp_id');
+					const changeStatus = $(this).is(":checked") ? "y":"n";
+
+					const resultVal = await _Self.useYnChgCamp(campId, changeStatus);
+					if(resultVal) {
+						$(this).prop("checked", changeStatus === 'y');
+					}
+
+				});
+
+				$(document).on("click", "#camp_list_wrap .btn_camp_remove", function() {
+
+					const campId = $(this).attr('camp_id');
+					_Self.removeCamp(campId);
+
+					return false;
+				});
+            },
+
+			removeCamp : async function(campId) {
+				if (!(await swalConfirm2("삭제하시겠습니까?"))) {
+					return false;
+                }
+
+				const oParams = {
+					"url"  : "/camp/ajax/removeCamp",
+					"data" : "campId=" + campId
+				};
+
+				execCommonAjax(oParams, async function(oData) {
+					if (oData.bResult) {
+						toastrSuccess(oData.sMsg)
+						_Self.getList();
+					} else {
+						toastrFail(oData.sMsg);
+					}
+
+				});
+			},
+
+			useYnChgCamp : async function(campId, useYn) {
+				const useYnNm = useYn == 'y' ? "사용" : "잠김";
+				if (!(await swalConfirm2("상태변경("+useYnNm+") 하시겠습니까?"))) {
+					return false;
+				}
+
+				const oParams = {
+					"url"  : "/camp/ajax/modifyUseYnCamp",
+					"data" : JSON.stringify({
+						"campId" : campId,
+						"useYn" : useYn
+					}),
+					"type" : "POST",
+					"async" : false
+				};
+
+				let resultVal = false;
+				execCommonAjax(oParams, function(oData) {
+					if (oData.bResult) {
+						resultVal = true;
+						toastrSuccess(oData.sMsg);
+                    } else {
+						resultVal = false;
+						toastrFail(oData.sMsg);
+					}
+
+				});
+				return resultVal;
+			}, //useYnChgMedia
+            /*
+			getList : function() {
+
+				const oParams = {
+					"url"   : "/camp/ajax/getList",
+					"data"  : $('#frm').serialize(),
+					"async" : false
+				};
+
+				execCommonAjax(oParams, function(oData) {
+                    $("#list_total").html(oData.sTotalInfo);
+                    $("#camp_list_wrap").html(oData.sListHtml);
+                    $("#pagenation_wrap").html(oData.sPageHtml);
+
+
+				});
+			},
+            */
+
+        }
+
+		getAjaxPage = function(nPage) {
+			$('#current_page').val(nPage);
+			_Self.getList();
+		}
+
+		$(function() {
+			_Self.init();
+		})
+    </script>
+
+
+
+    // Apply 버튼 클릭 시 동작하는 함수
+    <link rel="stylesheet" href="path/to/sweetalert2.min.css">
+    <script src="path/to/sweetalert2.all.min.js"></script>
+
+    <script>
+        document.getElementById('search').addEventListener('click', function() {
+            const selectedGender = document.querySelector('input[name="gender"]:checked');
+
+            if (selectedGender) {
+                const genderValue = selectedGender.value;
+
+
+                        // 여기에서 선택한 조건에 따라 href='#'로 이동하는 코드
+                        let randomPage;
+
+                        if (genderValue === 'Female') {
+                            const femalePages = ['article2_female.html'];
+                            randomPage = femalePages[Math.floor(Math.random() * femalePages.length)];
+                        } else if (genderValue === 'Male') {
+                            const malePages = ['article2_male.html','article2_male_2.html'];
+                            randomPage = malePages[Math.floor(Math.random() * malePages.length)];
+                        }
+
+                        // 선택된 페이지로 이동
+                        window.location.href = randomPage;
+
+                    } else {
+                        // 선택된 조건이 모두 필요할 경우 예외처리
+                        Swal.fire({
+                            title: '조건을 다시 확인해주세요.',
+                            icon: 'warning',
+                            confirmButtonText: '확인',
+                        });
+                    }
+                });
+    </script>
+
+
+    <script>
+        // Clear 버튼 클릭 시 동작하는 함수
+    document.getElementById('clear').addEventListener('click', function() {
+    // 라디오 버튼 선택 해제
+    const genderRadios = document.querySelectorAll('input[name="gender"]');
+    genderRadios.forEach(radio => radio.checked = false);
+    // ages는 해제 안함
+    // const ageRadios = document.querySelectorAll('input[name="age"]');
+    // ageRadios.forEach(radio => radio.checked = false);
+
+    const textContextRadios = document.querySelectorAll('input[name="textContext"]');
+    textContextRadios.forEach(radio => radio.checked = false);
+    
+    // image도 해제 안함
+    // const imageContextRadios = document.querySelectorAll('input[name="imageContext"]');
+    // imageContextRadios.forEach(radio => radio.checked = false);
+    });
+</script>
+<!--end::Custom Javascript-->
+</body>
+</html>
