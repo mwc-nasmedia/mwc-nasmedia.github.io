@@ -35,9 +35,9 @@
 	/** 왼쪽 패널 사이즈 조정 **/
 	--vz-vertical-menu-width: 450px;
 
-	--vz-body-font-family: "SUIT", "Montserrat", "Pretendard", sans-serif !important;
+	--vz-body-font-family: "SUIT", "Pretendard", "Pretendard", sans-serif !important;
 
-	--vz-font-sans-serif: "SUIT", "Montserrat", "Pretendard", sans-serif !important;
+	--vz-font-sans-serif: "SUIT", "Pretendard", "Pretendard", sans-serif !important;
 
 	/*--vz-font-sans-serif: 'Roboto', 'Poppins', sans-serif; */
 
